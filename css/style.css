@@ -4,3 +4,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* HEADER */
+header {
+  height: 10vh;
+}
+/* MAIN */
+main {
+  height: 85vh;
+  background-color: aquamarine;
+}
+
+#main-container {
+  height: 85vh;
+  border: 3px dashed coral;
+}
+/* FOOTER */
+footer {
+  border: 3px dashed blue;
+}
