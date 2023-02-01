@@ -15,9 +15,20 @@ main {
   background-color: aquamarine;
 }
 
-#main-container {
+#grid {
   height: 85vh;
-  border: 3px dashed coral;
+  width: 100%;
+  border: 2px solid gray;
+}
+
+.box {
+  width: calc(100% / 10);
+  height: 8.5vh;
+  border: 2px solid gray;
+}
+
+.active {
+  background-color: brown;
 }
 /* FOOTER */
 footer {
