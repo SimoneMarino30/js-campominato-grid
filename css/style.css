@@ -9,28 +9,39 @@
 header {
   height: 10vh;
 }
+
+#complexity {
+  width: 200px;
+}
+
+.custom-btn {
+  width: 200px;
+}
 /* MAIN */
 main {
-  height: 85vh;
+  height: 100%;
   background-color: aquamarine;
 }
 
 #grid {
-  height: 85vh;
-  width: 100%;
+  height: 100%;
+  width: 1200px;
   border: 2px solid gray;
+  /* gap: 10px; */
 }
 
 .box {
-  width: calc(100% / 10);
-  height: 8.5vh;
+  width: 110px;
+  height: 110px;
+
   border: 2px solid gray;
+  line-height: 110px;
 }
 
 .active {
-  background-color: brown;
+  background-color: lightblue;
 }
 /* FOOTER */
 footer {
-  border: 3px dashed blue;
+  /* border: 3px dashed blue; */
 }

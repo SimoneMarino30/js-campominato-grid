@@ -21,9 +21,20 @@
   <body>
     <!-- HEADER START -->
     <header class="container-fluid">
-      <div class="row flex-row">
-        <h1 class="title w-50">Campo Minato</h1>
-        <button id="myBtn" class="my-btn btn-secondary w-50">Play</button>
+      <div class="row">
+        <div class="col d-flex flex-row">
+          <h1 class="title">Campo Minato</h1>
+        </div>
+        <div class="col col-4">
+          <select name="complexity" id="complexity">
+            <option value="">Livello 1</option>
+            <option value="">Livello 2</option>
+            <option value="">Livello 3</option>
+          </select>
+          <button id="myBtn" class="custom-btn col-4 my-btn btn-secondary">
+            Play
+          </button>
+        </div>
       </div>
     </header>
     <!-- HEADER END -->
@@ -32,7 +43,10 @@
       <div id="main-container" class="container">
         <div class="row">
           <div class="col">
-            <div id="grid" class="d-flex flex-row flex-wrap"></div>
+            <div
+              id="grid"
+              class="d-flex justify-content-center flex-row flex-wrap text-center"
+            ></div>
           </div>
         </div>
       </div>

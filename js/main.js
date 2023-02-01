@@ -24,12 +24,15 @@
  *                        ON LOAD                                    *
  *                                                                   *
  *********************************************************************/
-const gridEl = document.getElementById("grid");
-
-gridClick(gridEl);
 // BUTTON
-// const buttonEl = document.getElementById("myBtn");
-// buttonEl.addEventListener("click", gridClick);
+const buttonEl = document.getElementById("myBtn");
+
+buttonEl.addEventListener("click", function () {
+  const gridEl = document.getElementById("grid");
+  // invocazione function grid
+  gridClick(gridEl);
+});
+
 /*********************************************************************
  *                                                                   *
  *                        FUNCTIONS                                  *
@@ -37,6 +40,8 @@ gridClick(gridEl);
  *********************************************************************/
 
 function gridClick(grid_El) {
+  // resetto la griglia
+  grid_El.innerHTML = "";
   // genero una griglia di box(10x10)
   for (let i = 0; i < 100; i++) {
     // creo il div all' interno della griglia
@@ -45,17 +50,18 @@ function gridClick(grid_El) {
     // aggiungo la classe .box
     gridBox.classList.add("box");
 
-    // aggiungo un addeventlistener per il toggle classe .active
+    // aggiungo un addeventlistener per il toggle classe .active (coloro il background)
     gridBox.addEventListener("click", function () {
       // aggiungo la classe active
       this.classList.toggle("active");
-      alert("Mi hai dato la classe ACTIVE");
+      //   emetto un messaggio in console con il numero della cella cliccata.
+      console.log(i + 1);
     });
 
     // aggiungo il .box alla griglia
     grid_El.append(gridBox);
-
-    // console.log(gridBox);
+    // aggiungo il numero progressivo al .box
+    gridBox.append(i + 1);
   }
 
   //   return alert("Hello World!");
