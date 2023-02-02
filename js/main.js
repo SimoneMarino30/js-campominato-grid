@@ -17,7 +17,6 @@
 // clicco sulla cella
 // la cella si colora di azzurro
 // console.log del numero di cellla cliccata
-//
 
 /*********************************************************************
  *                                                                   *
@@ -29,21 +28,40 @@ const buttonEl = document.getElementById("myBtn");
 
 buttonEl.addEventListener("click", function () {
   const gridEl = document.getElementById("grid");
+  const selectEl = document.getElementById("complexity");
+
+  const difficulty = selectEl.value;
+  console.log(difficulty);
   // invocazione function grid
-  gridClick(gridEl);
+  gridClick(gridEl, difficulty);
 });
 
+// selectEl.addEventListener("select", function () {
+//   const gridEl = document.getElementById("grid");
+//   // invocazione function grid
+//   gridClick(gridEl);
+// });
 /*********************************************************************
  *                                                                   *
  *                        FUNCTIONS                                  *
  *                                                                   *
  *********************************************************************/
 
-function gridClick(grid_El) {
+function gridClick(grid_El, select_El) {
   // resetto la griglia
   grid_El.innerHTML = "";
-  // genero una griglia di box(10x10)
-  for (let i = 0; i < 100; i++) {
+
+  let numeroCelle;
+  if (select_El == 1) {
+    numeroCelle = 100;
+  } else if (select_El == 2) {
+    numeroCelle = 81;
+  } else {
+    numeroCelle = 49;
+  }
+  // genero una griglia di box
+  for (let i = 0; i < numeroCelle; i++) {
+    let textNumber = i + 1;
     // creo il div all' interno della griglia
     const gridBox = document.createElement("div");
 
@@ -54,14 +72,21 @@ function gridClick(grid_El) {
     gridBox.addEventListener("click", function () {
       // aggiungo la classe active
       this.classList.toggle("active");
-      //   emetto un messaggio in console con il numero della cella cliccata.
-      console.log(i + 1);
+      //   stampo un messaggio in console con il numero della cella cliccata.
+      console.log(textNumber);
     });
 
     // aggiungo il .box alla griglia
     grid_El.append(gridBox);
     // aggiungo il numero progressivo al .box
-    gridBox.append(i + 1);
+    gridBox.append(textNumber);
+
+    // aggiungo i livelli di difficolta'
+    if (select_El == 2) {
+      gridBox.classList.add("box-medium");
+    } else if (select_El == 3) {
+      gridBox.classList.add("box-hard");
+    }
   }
 
   //   return alert("Hello World!");

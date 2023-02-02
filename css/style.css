@@ -19,25 +19,36 @@ header {
 }
 /* MAIN */
 main {
-  height: 100%;
+  height: 1400px;
   background-color: aquamarine;
 }
 
 #grid {
-  height: 100%;
-  width: 1200px;
-  border: 2px solid gray;
-  /* gap: 10px; */
+  height: 1100px;
+  width: 1100px;
+  border: 1px solid aquamarine;
+  /* gap: 8px; */
 }
 
 .box {
-  width: 110px;
-  height: 110px;
-
+  width: calc(100% / 10);
+  height: calc(100% / 10);
   border: 2px solid gray;
   line-height: 110px;
 }
 
+.box-medium {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+  border: 2px solid gray;
+  line-height: 110px;
+}
+.box-hard {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+  border: 2px solid gray;
+  line-height: 110px;
+}
 .active {
   background-color: lightblue;
 }
